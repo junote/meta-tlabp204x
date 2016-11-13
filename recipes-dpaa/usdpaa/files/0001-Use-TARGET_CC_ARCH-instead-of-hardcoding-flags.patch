@@ -1,0 +1,26 @@
+From ab1448138439adb8c96197d1d1436576332ce266 Mon Sep 17 00:00:00 2001
+From: Fahad Arslan <Fahad_Arslan@mentor.com>
+Date: Mon, 12 Sep 2016 14:54:21 +0530
+Subject: [PATCH] Use TARGET_CC_ARCH instead of hardcoding flags
+
+Signed-off-by: Fahad Arslan <Fahad_Arslan@mentor.com>
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index 5b47cf7..ac51f3c 100644
+--- a/Makefile
++++ b/Makefile
+@@ -38,7 +38,7 @@ ifneq (distclean,$(MAKECMDGOALS))
+    $(ARCH)_SPEC_DEFINE	:= _FILE_OFFSET_BITS=64 CONFIG_PPC32
+    $(ARCH)_SPEC_INC_PATH:=
+    $(ARCH)_SPEC_LIB_PATH:=
+-   $(ARCH)_SPEC_CFLAGS	:= -mcpu=e500mc
++   $(ARCH)_SPEC_CFLAGS	:= $(TARGET_CC_ARCH)
+    $(ARCH)_SPEC_LDFLAGS	:=
+    LIBDIR               ?= lib
+  else ifeq (powerpc64,$(ARCH))
+-- 
+1.9.1
+
