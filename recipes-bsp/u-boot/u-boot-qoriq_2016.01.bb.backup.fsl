@@ -17,11 +17,9 @@ INHIBIT_DEFAULT_DEPS = "1"
 DEPENDS = "libgcc virtual/${TARGET_PREFIX}gcc"
 DEPENDS_append_qoriq-ppc = " boot-format-native"
 
- SRC_URI = "git://github.com/junote/tlabp204x-uboot.git"
- SRCREV = "dac78c980401999550cf9b3b54d0c92b257b2c2a"
-
-# SRC_URI = "git://git.denx.de/u-boot.git"
-# SRCREV = "136179bec19f4bc84227cba138214ea392a723ea"
+SRC_URI = "git://github.com/junote/tlabp204x-uboot.git \
+"
+SRCREV = "463dae74732c595537b553e4b189c2b7d6a12726"
 
 S = "${WORKDIR}/git"
 
